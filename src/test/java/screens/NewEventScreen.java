@@ -9,18 +9,18 @@ import utils.Utils;
 public class NewEventScreen extends BaseScreen{
     IOSDriver driver;
 
-    private final By EVENT_NAME_INPUT = MobileBy.iOSNsPredicateString("name == \"Title\"");
-    private final By START_TIME_BUTTON = MobileBy.iOSClassChain("**/XCUIElementTypeCell[`label contains \"Starts\"`]/XCUIElementTypeStaticText[2]");
-    private final By TIME_PICKER = MobileBy.iOSNsPredicateString("label == \"Time Picker\"");
-    private final By AM_MARKER_FORMAT = MobileBy.iOSNsPredicateString("label == \"AM\"");
-    private final By PM_MARKER_FORMAT = MobileBy.iOSNsPredicateString("label == \"PM\"");
-    private final By END_TIME_BUTTON = MobileBy.iOSClassChain("**/XCUIElementTypeCell[`label contains \"Ends\"`]/XCUIElementTypeStaticText[2]");
-    private final By SAVE_BUTTON = MobileBy.iOSClassChain("**/XCUIElementTypeButton[`label == \"Add\"`][1]");
-    private final By ADD_LOCATION_BUTTON = MobileBy.iOSNsPredicateString("label == \"Location\"");
-    private final By SEARCH_INPUT = MobileBy.iOSNsPredicateString("label == \"Enter Location\"");
-    private final By LOCATION_BUTTON= MobileBy.iOSClassChain("**/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeOther[1]");//MobileBy.xpath("//XCUIElementTypeStaticText[contains(@name,'Minsk,Belarus')]");
-    private final By ALERT_BUTTON = MobileBy.iOSNsPredicateString("label == \"Alert\"");
-    private final By ALERT_5_MINUTES = MobileBy.iOSNsPredicateString("label == \"5 minutes before\"");
+    private final By EVENT_NAME_INPUT = MobileBy.iOSNsPredicateString("name == 'Title'");
+    private final By START_TIME_BUTTON = MobileBy.iOSClassChain("**/XCUIElementTypeCell[`label contains 'Starts'`]/XCUIElementTypeStaticText[2]");
+    private final By TIME_PICKER = MobileBy.iOSNsPredicateString("label == 'Time Picker'");
+    private final By AM_MARKER_FORMAT = MobileBy.iOSNsPredicateString("label == 'AM'");
+    private final By PM_MARKER_FORMAT = MobileBy.iOSNsPredicateString("label == 'PM'");
+    private final By END_TIME_BUTTON = MobileBy.iOSClassChain("**/XCUIElementTypeCell[`label contains 'Ends'`]/XCUIElementTypeStaticText[2]");
+    private final By SAVE_BUTTON = MobileBy.iOSClassChain("**/XCUIElementTypeButton[`label == 'Add'`][1]");
+    private final By ADD_LOCATION_BUTTON = MobileBy.iOSNsPredicateString("label == 'Location'");
+    private final By SEARCH_INPUT = MobileBy.iOSNsPredicateString("label == 'Enter Location'");
+    private final By LOCATION_BUTTON= MobileBy.iOSClassChain("**/XCUIElementTypeCell[$type == 'XCUIElementTypeStaticText' AND label == '\"Minsk,Belarus\"'$]");
+    private final By ALERT_BUTTON = MobileBy.iOSNsPredicateString("label == 'Alert'");
+    private final By ALERT_5_MINUTES = MobileBy.iOSNsPredicateString("label == '5 minutes before'");
 
     public NewEventScreen(IOSDriver driver) {
         super(driver);
@@ -65,6 +65,6 @@ public class NewEventScreen extends BaseScreen{
     public void addLocation(String locationName){
         waitAndClick(driver.findElement(ADD_LOCATION_BUTTON));
         clearAndEnterTextToInput(SEARCH_INPUT, locationName);
-        driver.findElement(LOCATION_BUTTON).click();
+        waitAndClick(LOCATION_BUTTON);
     }
 }

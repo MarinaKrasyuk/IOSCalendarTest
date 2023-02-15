@@ -7,7 +7,7 @@ import utils.Utils;
 public class NotificationScreen extends BaseScreen{
     IOSDriver driver;
 
-    private final String NOTIFICATION_XPATH_PATTERN = "label contains \"%s\" and label contains \"%s\" and label contains \"%s\"";
+    private final String NOTIFICATION_XPATH_PATTERN = "label contains '%s' and label contains '%s' and label contains '%s'";
 
     public NotificationScreen(IOSDriver driver) {
         super(driver);

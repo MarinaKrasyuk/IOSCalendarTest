@@ -61,7 +61,7 @@ public class BaseTest {
     }
 
     private void manageNotifications(Boolean show) {
-        int yMargin = 5;
+        int yMargin = 2;
         Dimension screenSize = driver.manage().window().getSize();
         int xMid = screenSize.width / 2;
         PointOption top = PointOption.point(xMid, yMargin);
@@ -83,6 +83,6 @@ public class BaseTest {
     }
     @AfterAll
     public static void  tearDown() {
-        Driver.closeDriver(driver);
+        Driver.closeDriver();
     }
 }

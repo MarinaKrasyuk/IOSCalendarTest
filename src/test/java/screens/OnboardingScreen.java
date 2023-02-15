@@ -7,8 +7,8 @@ import org.openqa.selenium.By;
 public class OnboardingScreen extends BaseScreen {
     IOSDriver driver;
 
-    private final By ALLOW_MODULE_WINDOW = MobileBy.iOSClassChain("**/XCUIElementTypeAlert[`label == \"Allow “Calendar” to use your location?\"`]/XCUIElementTypeOther/XCUIElementTypeOther");
-    private final By ALLOW_WHILE_USING_APP_BUTTON = MobileBy.iOSNsPredicateString("label == \"Allow While Using App\"");
+    private final By ALLOW_MODULE_WINDOW = MobileBy.iOSClassChain("**/XCUIElementTypeAlert[`label == 'Allow “Calendar” to use your location?'`]/XCUIElementTypeOther/XCUIElementTypeOther");
+    private final By ALLOW_WHILE_USING_APP_BUTTON = MobileBy.iOSNsPredicateString("label == 'Allow While Using App'");
 
     public OnboardingScreen(IOSDriver driver) {
         super(driver);
